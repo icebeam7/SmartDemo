@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartDemo.Pages.MainPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Analyze Tweets" Clicked="AnalyzeTweets_Clicked" />
+            <Button Text="Analyze Picture" Clicked="AnalyzePicture_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

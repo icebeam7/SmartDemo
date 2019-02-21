@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:labelTextColor="clr-namespace:SmartDemo.Converters"
+             x:Class="SmartDemo.Pages.AnalyzeTweetPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <labelTextColor:StringToColorConverter x:Key="StringToColorConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White" Padding="10">
+            <Label Text="Analysis" TextColor="Blue" FontSize="Large"/>
+
+            <ActivityIndicator x:Name="indicator" Color="Green" VerticalOptions="Center" HorizontalOptions="Center"/>
+
+            <Label Text="Tweet" FontSize="Small" TextColor="Gray"/>
+            <Label Text="{Binding Message}" FontSize="Medium" LineBreakMode="WordWrap" 
+                   TextColor="{Binding Sentiment, Converter={StaticResource StringToColorConverter}}"/>
+            <BoxView HeightRequest="3" Margin="10" />
+
+            <Label Text="Keywords" FontSize="Small" TextColor="Gray"/>
+            <Label Text="{Binding Keywords}" FontSize="Medium" LineBreakMode="WordWrap" TextColor="Black"/>
+            <BoxView HeightRequest="3" Margin="10" />
+
+            <Label Text="Language" FontSize="Small" TextColor="Gray"/>
+            <Label Text="{Binding Language}" FontSize="Medium" TextColor="Black"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
